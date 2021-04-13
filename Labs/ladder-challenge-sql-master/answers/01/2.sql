@@ -1,0 +1,3 @@
+SELECT *
+FROM pets
+LIMIT 5;

@@ -1,0 +1,4 @@
+SELECT *
+FROM pets
+ORDER BY age DESC
+LIMIT 5;

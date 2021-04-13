@@ -1,0 +1,3 @@
+SELECT *
+FROM pets
+ORDER BY age;

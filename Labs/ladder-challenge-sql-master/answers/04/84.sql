@@ -1,0 +1,15 @@
+WITH temp_1
+AS
+(
+SELECT
+date,
+close,
+MAX(high) OVER(ORDER BY date ROWS BETWEEN 14 PRECEDING AND 1 PRECEDING) h14,
+MIN(low) OVER(ORDER BY date ROWS BETWEEN 14 PRECEDING AND 1 PRECEDING) l14
+FROM yum
+)
+SELECT
+date,
+((close-l14)/(h14-l14)) percent_k,
+AVG(((close-l14)/(h14-l14))) OVER(ORDER BY date ROWS BETWEEN 3 PRECEDING and 1 PRECEDING) percent_d
+FROM temp_1;

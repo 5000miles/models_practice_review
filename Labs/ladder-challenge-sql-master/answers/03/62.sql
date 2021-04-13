@@ -1,0 +1,3 @@
+SELECT *
+FROM yum
+LIMIT 10;
